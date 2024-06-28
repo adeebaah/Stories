@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/about', to: 'pages#about'
   get '/thanks', to: 'pages#thanks'
+  get '/dashboard', to: 'pages#dashboard'
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

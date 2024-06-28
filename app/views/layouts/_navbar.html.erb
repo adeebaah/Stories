@@ -6,6 +6,7 @@
 </label>
 <div class="sidebar">
   <header>Menu</header>
+  <% if user_signed_in? %>
   <%= link_to root_path, class: "active" do %>
     <i class="fas fa-qrcode"></i>
     <span>Dashboard</span>
@@ -22,9 +23,24 @@
     <i class="fas fa-calendar"></i>
     <span>Blog</span>
   <% end %>
-  <%= link_to new_user_session_path do %>
+  <%= link_to destroy_user_session_path do %>
     <i class="far fa-question-circle"></i>
-    <span>Sign Up/Login</span>
+    <span>Logout</span>
+  <% end %>
+    <% else %>
+    <%= link_to about_path do %>
+      <i class="fas fa-info-circle"></i>
+      <span>About</span>
+    <% end %>
+    <%= link_to about_path do %>
+      <i class="fas fa-phone"></i>
+      <span>Contact Us</span>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+      <i class="far fa-question-circle"></i>
+      <span>SignUp/Login</span>
+    <% end %>
   <% end %>
 </div>
+
 </body>
