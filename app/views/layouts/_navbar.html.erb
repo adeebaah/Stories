@@ -1,0 +1,30 @@
+<body>
+<input type="checkbox" id="check">
+<label for="check">
+  <i class="fas fa-bars" id="btn"></i>
+  <i class="fas fa-times" id="cancel"></i>
+</label>
+<div class="sidebar">
+  <header>Menu</header>
+  <%= link_to root_path, class: "active" do %>
+    <i class="fas fa-qrcode"></i>
+    <span>Dashboard</span>
+  <% end %>
+  <%= link_to about_path do %>
+    <i class="fas fa-link"></i>
+    <span>About</span>
+  <% end %>
+  <%= link_to about_path do %>
+    <i class="fas fa-stream"></i>
+    <span>Contact</span>
+  <% end %>
+  <%= link_to about_path do %>
+    <i class="fas fa-calendar"></i>
+    <span>Blog</span>
+  <% end %>
+  <%= link_to about_path do %>
+    <i class="far fa-question-circle"></i>
+    <span>Sign Up/Login</span>
+  <% end %>
+</div>
+</body>

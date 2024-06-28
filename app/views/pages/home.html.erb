@@ -3,13 +3,12 @@
 <html>
 <head>
   <title>Home Page</title>
-  <%= stylesheet_link_tag 'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
+</html>
 
-<body>
 <main class="main-section">
   <h1>Welcome to the Website</h1>
-  <button class="learn-more">Learn More</button>
+  <%= link_to 'Learn More', about_path, class: 'learn-more' %>
 </main>
 
 <section class="supporting-section">
@@ -25,9 +24,4 @@
   <h2>Learn about us</h2>
   <button class="learn-more">Learn More</button>
 </section>
-
-<footer>
-  <p>&copy; 2024 Our Company. All rights reserved.</p>
-</footer>
-</body>
 </html>
