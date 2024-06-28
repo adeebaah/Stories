@@ -19,10 +19,10 @@
     <i class="fas fa-stream"></i>
     <span>Contact</span>
   <% end %>
-  <%= link_to about_path do %>
-    <i class="fas fa-calendar"></i>
-    <span>Blog</span>
-  <% end %>
+    <%= link_to blogs_path do %>
+      <i class="fas fa-stream"></i>
+      <span>Blogs</span>
+    <% end %>
   <%= link_to destroy_user_session_path do %>
     <i class="far fa-question-circle"></i>
     <span>Logout</span>
@@ -36,9 +36,13 @@
       <i class="fas fa-phone"></i>
       <span>Contact Us</span>
     <% end %>
+    <%= link_to new_user_registration_path do %>
+      <i class="fas fa-user-plus"></i>
+      <span>Sign Up</span>
+    <% end %>
     <%= link_to new_user_session_path do %>
-      <i class="far fa-question-circle"></i>
-      <span>SignUp/Login</span>
+      <i class="fas fa-sign-in-alt"></i>
+      <span>Login</span>
     <% end %>
   <% end %>
 </div>

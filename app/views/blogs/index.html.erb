@@ -1,0 +1,24 @@
+<!-- app/views/blogs/index.html.erb -->
+<% content_for :body_class, "blogs-index" %>
+<% content_for :extra_styles do %>
+  <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<h1>Blogs</h1>
+
+<div class="blog-container">
+  <% @blogs.each do |blog| %>
+    <div class="blog-post">
+      <h2><%= link_to blog.title, blog %></h2>
+      <p><%= truncate(blog.content, length: 200) %></p>
+      <% if blog.user == current_user %>
+        <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-secondary' %>
+        <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to 'Create New Blog', new_blog_path, class: 'create-blog-button' %>
+<% end %>

@@ -1,0 +1,122 @@
+/* app/assets/stylesheets/blogs.css.scss */
+
+body.blogs-index {
+  background: linear-gradient(to right, #e3eefe, #efddfb);
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 60px; /* space for the footer */
+}
+
+body.blogs-new, body.blogs-edit {
+  background: linear-gradient(to right, #e3eefe, #efddfb);
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  //position: absolute;
+  //top: 25px;
+  //left: 850px;
+  //
+  //font-size: 40px;
+  //margin: 0;
+  //padding: 0;
+  //text-align: left;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #9378ef;
+  color: #b66868;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.create-blog-button {
+  position: fixed;
+  bottom: 65px;
+  right: 30px;
+  z-index: 1200;
+  padding: 10px 20px;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: #9378ef;
+  color: white;
+  text-decoration: none;
+}
+
+.create-blog-button:hover {
+  background-color: #b1a4da;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.blog-post {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.blog-post p {
+  color: #666;
+}

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # devise_for :users
 
   resources :users, only: [:new, :create, :show, :index]
+  resources :blogs
+  resources :users, only: [:new, :create, :show, :index]
 
   # devise_for :users
   # resources :users, only: [:show, :index]
