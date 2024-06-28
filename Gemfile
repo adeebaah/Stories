@@ -67,3 +67,4 @@ group :test do
 end
 gem "pg"
 gem "sassc-rails"
+gem "devise"

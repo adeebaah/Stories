@@ -12,7 +12,9 @@
 <section class="supporting-section">
   <h2>Join Our Journey</h2>
   <p>Discover the world with us and create unforgettable memories.</p>
-  <a href="/signup" class="btn-signup">Signup</a>
+<br>
+  <%= link_to "Signup", new_user_session_path, class: 'learn-more' %>
+  <%= link_to "Signout", destroy_user_session_path, class: 'learn-more' , method: :delete%>
 </section>
 
 
