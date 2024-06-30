@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     # get :profile
 
   end
+  resources :users, only: [] do
+    member do
+      get :profile
+      end
+    end
 
   resources :blogs
 

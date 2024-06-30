@@ -245,7 +245,7 @@ body.blogs-new .form-container, body.blogs-edit .form-container {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #9378ef;
   color: white;
 }
 
@@ -284,8 +284,6 @@ body.blogs-new .form-container, body.blogs-edit .form-container {
 .pagination {
 
   justify-content: left;
-  margin-bottom: 0;
-
   padding: 5px;
 }
 
@@ -294,7 +292,7 @@ body.blogs-new .form-container, body.blogs-edit .form-container {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #007bff;
+  color: #9378ef;
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 4px;
@@ -302,7 +300,7 @@ body.blogs-new .form-container, body.blogs-edit .form-container {
 
 .pagination a:hover,
 .pagination span.current {
-  background-color: #007bff;
+  background-color: #b1a4da;
   color: white;
 }
 

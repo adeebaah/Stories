@@ -1,10 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-r">
-      <%= image_tag(@user.avatar,style:"width:150px; height:150px") if @user.avatar.attached? %>
+<h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
 
+<div class="user-info">
+  <p>Email: <%= @user.email %></p>
+
+</div>
+
+<h2>Blogs by <%= @user.first_name %></h2>
+<%= image_tag(@user.avatar,style:"width:150px; height:150px") if @user.avatar.attached? %>
+<br/>
+<div class="user-blogs">
+  <% @blogs.each do |blog| %>
+    <div class="blog-post">
+      <br>
+      <h3><%= link_to blog.title, blog %></h3>
+      <p><%= truncate(blog.content, length: 200) %></p>
+      <%= link_to 'Read more', blog, class: 'btn btn-primary' %>
     </div>
-    <h1><%= @user.first_name + " " + @user.last_name %></h1>
-    <p><%= @user.email %></p>
-  </div>
+  <% end %>
 </div>
