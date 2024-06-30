@@ -5,17 +5,22 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/thanks', to: 'pages#thanks'
   get '/dashboard', to: 'pages#dashboard'
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+
   end
   # devise_for :users
 
   resources :users, only: [:new, :create, :show, :index, :destroy]
   resources :blogs do
     get '/blogs/:id', action: :index, on: :collection
+    # get :profile
+
   end
 
   resources :blogs
+
 
 
   # devise_for :users
