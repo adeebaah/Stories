@@ -304,3 +304,15 @@ body.blogs-new .form-container, body.blogs-edit .form-container {
   color: white;
 }
 
+.user-blogs{
+  display: flex;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  height: 200%;
+  justify-content: center;
+
+}

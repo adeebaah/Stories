@@ -1,45 +1,48 @@
-<% content_for :body_class, "blogs-#{action_name}" %>
-<% content_for :extra_styles do %>
-  <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
-<% end %>
+<div class="container">
+  <% content_for :body_class, "blogs-#{action_name}" %>
+  <% content_for :extra_styles do %>
+    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <% end %>
 
-<h1><%= action_name.capitalize %> Blog</h1>
+  <h1><%= action_name.capitalize %> Blog</h1>
 
-<div class="form-container">
-  <%= form_with(model: @blog, local: true, html: { multipart: true }) do |form| %>
-    <% if @blog.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+  <div class="form-container">
+    <%= form_with(model: @blog, local: true, html: { multipart: true }) do |form| %>
+      <% if @blog.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
-        <ul>
-          <% @blog.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+          <ul>
+            <% @blog.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :content %>
+        <%= form.text_area :content, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :image %>
+        <%= form.file_field :image, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= form.submit 'Update Blog', class: 'btn btn-primary' %>
+        <br>
       </div>
     <% end %>
+    <br>
+    <br>
+    <%= link_to 'Back', blogs_path, class: 'btn btn-secondary' %>
+  </div>
 
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= form.label :content %>
-      <%= form.text_area :content, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image %>
-      <%= form.file_field :image, class: 'form-control' %>
-    </div>
-<br>
-    <div class="actions">
-      <%= form.submit 'Update Blog', class: 'btn btn-primary' %>
-      <br>
-    </div>
-  <% end %>
-<br>
-  <br>
-  <%= link_to 'Back', blogs_path, class: 'btn btn-secondary' %>
 </div>
