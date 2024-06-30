@@ -68,3 +68,6 @@ end
 gem "pg"
 gem "sassc-rails"
 gem "devise"
+gem "image_processing", ">= 1.2"
+gem "kaminari"
+

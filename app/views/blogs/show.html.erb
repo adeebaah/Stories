@@ -1,13 +1,22 @@
-<!-- app/views/blogs/show.html.erb -->
+
 <div class="blog-container">
-<h1><%= @blog.title %></h1>
-<p><%= @blog.content %></p>
-<p>By <%= @blog.user.first_name %></p>
+  <h1 class="blog-title"><%= @blog.title %></h1>
+  <p class="blog-content"><%= @blog.content %></p>
+  <p class="blog-author">By <%= @blog.user.first_name %></p>
+  <% if @blog.image.present? %>
+    <div class="blog-image">
+      <%= image_tag(@blog.image) %>
+    </div>
+  <% end %>
 
-<% if @blog.user == current_user %>
-  <%= link_to 'Edit', edit_blog_path(@blog) %> |
-  <%= link_to 'Delete', @blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <% if @blog.user == current_user %>
+    <div class="blog-actions">
+      <%= link_to 'Edit', edit_blog_path(@blog), class: 'btn btn-edit' %>
+      <%= button_to 'Delete', @blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-delete' %>
+    </div>
+  <% end %>
 
-<%= link_to 'Back', blogs_path %>
+  <div class="back-link">
+    <%= link_to 'Back', blogs_path, class: 'btn btn-back' %>
+  </div>
 </div>

@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   end
   # devise_for :users
 
-  resources :users, only: [:new, :create, :show, :index]
+  resources :users, only: [:new, :create, :show, :index, :destroy]
+  resources :blogs do
+    get '/blogs/:id', action: :index, on: :collection
+  end
+
   resources :blogs
-  resources :users, only: [:new, :create, :show, :index]
+
 
   # devise_for :users
   # resources :users, only: [:show, :index]

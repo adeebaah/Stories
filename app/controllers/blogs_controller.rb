@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:title).page params[:page]
   end
   def show
 
@@ -32,6 +32,12 @@ class BlogsController < ApplicationController
 
   def destroy
     # code here
+    @blog = Blog.find(params[:id])
+    if  @blog.destroy
+    redirect_to blogs_path, notice: 'Blog was successfully destroyed.'
+    else
+      render :'blogs/index'
+      end
   end
 
   private
@@ -39,7 +45,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :image)
   end
   def correct_user
     @blog = current_user.blogs.find_by(id: params[:id])
