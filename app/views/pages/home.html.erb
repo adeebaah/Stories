@@ -1,4 +1,3 @@
-<!-- app/views/pages/home.html.erb -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,22 +5,24 @@
 </head>
 </html>
 
-<main class="main-section">
-  <h1>Welcome to the Website</h1>
-  <%= link_to 'Learn More', about_path, class: 'learn-more' %>
+<main class="main-section" style="background-image: url(<%= asset_path('story1.jpg') %>); background-repeat: no-repeat; background-position: center; background-size: cover; height: 95vh;">
+  <div class="relative w-full text-black p-8 flex items-center justify-center">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold">Welcome to the Stories</h1>
+      <%= link_to 'Learn More', about_path, class: 'learn-more bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' %>
+    </div>
+  </div>
 </main>
-
-<section class="supporting-section">
-  <h2>About Us</h2>
-  <p>Creating a travel journal app.</p>
+<br>
+<br>
+<h2 style="font-size: 45px; font-weight: bold; margin-bottom: 20px;">About Us</h2>
+<section class="supporting-section" style="display: flex; align-items: center; justify-content: space-between; padding: 20px;">
+  <div class="about-image" style="flex: 1; max-width: 50%; padding-right: 20px;">
+    <img src="<%= asset_path('story2.jpg') %>" alt="About Us Image" style="width: 100%; height: auto; border-radius: 8px;">
+  </div>
+  <div class="about-text" style="flex: 1; max-width: 50%;">
+    <p style="font-size: 18px;">We are focused on creating an amazing travel journal app that allows users to document their journeys, share experiences, and create lasting memories.</p>
+  </div>
 </section>
 
-<section class="secondary-section">
-  <!-- Background image will be added via CSS -->
-</section>
 
-<section class="discover-section">
-  <h2>Learn about us</h2>
-  <button class="learn-more">Learn More</button>
-</section>
-</html>

@@ -1,26 +1,19 @@
 class UsersController < ApplicationController
 
   def new
-    @user= User.new
+    @user = User.new
   end
 
   def profile
-    @user= User.find(params[:id])
-    @blogs= @user.blogs
+    @user = User.find(params[:id])
+    @blogs = @user.blogs
   end
-  # def create
-  #   @user = User.new(user_params)
-  #   if @user.save
-  #     redirect_to thanks_path, notice: 'User was successfully created'
-  #   else
-  #     render :new
-  #   end
-  # end
 
+  def show
+  end
   private
+
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-    end
+    params.require(:user).permit(:first_name, :last_name, :email, :dob, :avatar, :password, :password_confirmation)
   end
-
-
+end

@@ -18,8 +18,8 @@
 </head>
 <body class="<%= content_for?(:body_class) ? yield(:body_class) : '' %>">
 <%= render 'layouts/navbar' %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<!--<p class="notice"><%#= notice %></p>-->
+<!--<p class="alert"><%#= alert %></p>-->
 <%= yield %>
 <%= stylesheet_link_tag "application", "data-turbo-track": "true" %>
 <footer>

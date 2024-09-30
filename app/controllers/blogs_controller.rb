@@ -2,8 +2,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   def index
-    @blogs = Blog.order(:title).page params[:page]
-  end
+    @blogs = Blog.page(params[:page]).per(6)
+    end
   def show
 
   end

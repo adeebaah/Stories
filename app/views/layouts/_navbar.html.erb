@@ -7,48 +7,53 @@
 <div class="sidebar">
   <header>Menu</header>
   <% if user_signed_in? %>
-  <%= link_to root_path, class: "active" do %>
-    <i class="fas fa-qrcode"></i>
-    <span>Dashboard</span>
-  <% end %>
+    <%= link_to root_path, class: "active" do %>
+      <i class="fas fa-qrcode"></i>
+      <span>Dashboard</span>
+    <% end %>
+
     <%= link_to profile_user_path(current_user) do %>
       <i class="fas fa-qrcode"></i>
       <span>Profile</span>
     <% end %>
-  <%= link_to about_path do %>
-    <i class="fas fa-link"></i>
-    <span>About</span>
-  <% end %>
-  <%= link_to about_path do %>
-    <i class="fas fa-stream"></i>
-    <span>Contact</span>
-  <% end %>
+
+    <%= link_to about_path do %>
+      <i class="fas fa-link"></i>
+      <span>About</span>
+    <% end %>
+
+    <%= link_to about_path do %>
+      <i class="fas fa-stream"></i>
+      <span>Contact</span>
+    <% end %>
+
     <%= link_to blogs_path do %>
       <i class="fas fa-stream"></i>
       <span>Blogs</span>
     <% end %>
-  <%= link_to destroy_user_session_path do %>
-    <i class="far fa-question-circle"></i>
-    <span>Logout</span>
-  <% end %>
-    <% else %>
+
+  <% else %>
+
     <%= link_to about_path do %>
       <i class="fas fa-info-circle"></i>
       <span>About</span>
     <% end %>
+
     <%= link_to about_path do %>
       <i class="fas fa-phone"></i>
       <span>Contact Us</span>
     <% end %>
+
     <%= link_to new_user_registration_path do %>
       <i class="fas fa-user-plus"></i>
       <span>Sign Up</span>
     <% end %>
+
     <%= link_to new_user_session_path do %>
       <i class="fas fa-sign-in-alt"></i>
       <span>Login</span>
     <% end %>
+
   <% end %>
 </div>
-
 </body>
